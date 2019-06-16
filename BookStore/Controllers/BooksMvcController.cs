@@ -1,6 +1,7 @@
 ﻿using BookStore.Exceptions;
 using BookStore.Models;
 using BookStore.Repository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace BookStore.Controllers
 {
+    [Authorize]
     public class BooksMvcController : Controller
     {
         private readonly IBookRepository _bookRepository;

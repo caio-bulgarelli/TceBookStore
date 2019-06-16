@@ -36,7 +36,7 @@
                         <div style="clear:both"></div>
                         <img src="@Url.Content(Model.Cover)" id="imgCover" style="max-width:150px" />
                         <input id="imgInput" asp-for="Cover" class="form-control" type="hidden" />
-                        <input id="imgUploadInput" type="file" name="file" onchange="uploadImage()" />
+                        <input id="imgUploadInput" type="file" name="file" onchange="uploadImage()" accept="image/png, image/jpeg"/>
                     </div>
                 </div>
                 <div class="col-md-6" style="width:70%">
@@ -56,14 +56,14 @@
                         <span asp-validation-for="Author" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="Price" class="control-label"></label>
-                        <input asp-for="Price" class="form-control" />
-                        <span asp-validation-for="Price" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
                         <label asp-for="PublicationDate" class="control-label"></label>
                         <input asp-for="PublicationDate" class="form-control" />
                         <span asp-validation-for="PublicationDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Price" class="control-label"></label>
+                        <input asp-for="Price" class="form-control" pattern="[0-9]*" />
+                        <span asp-validation-for="Price" class="text-danger"></span>
                     </div>
                 </div>
             </div>

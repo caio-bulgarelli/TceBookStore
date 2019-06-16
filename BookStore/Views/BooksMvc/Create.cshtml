@@ -98,6 +98,9 @@
                             }
                         });
                     }
+
+                    document.getElementById('btnSubmit').disabled = false;
+                    
                 });
             }
         }
@@ -164,7 +167,7 @@
                         <div style="clear:both"></div>
                         <img id="imgCover" style="max-width:150px" />
                         <input id="imgInput" asp-for="Cover" class="form-control" type="hidden" />
-                        <input id="imgUploadInput" type="file" name="file" onchange="uploadImage()" />
+                        <input id="imgUploadInput" type="file" name="file" onchange="uploadImage()" accept="image/png, image/jpeg" />
                     </div>
                 </div>
                 <div class="col-md-6" style="width:70%">
@@ -185,13 +188,13 @@
                     </div>
                     <div class="form-group">
                         <label asp-for="Price" class="control-label"></label>
-                        <input id="priceInput" asp-for="Price" class="form-control" />
+                        <input id="priceInput" asp-for="Price" class="form-control" pattern="[0-9]*" />
                         <span asp-validation-for="Price" class="text-danger"></span>
                     </div>
                 </div>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input id="btnSubmit" type="submit" value="Create" class="btn btn-default" disabled="disabled" />
             </div>
         </form>
     </div>
