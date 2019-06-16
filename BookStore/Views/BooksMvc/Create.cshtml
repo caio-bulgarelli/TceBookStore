@@ -1,0 +1,206 @@
+﻿@model BookStore.Models.Book
+
+@{
+    ViewData["Title"] = "Adicionar Livro";
+}
+
+<h2>Adicionar Livro</h2>
+
+<hr />
+<div class="row">
+    <script type="text/javascript">
+        var registeredBook = false;
+        var bookData = false;
+        var googleBook = false;
+
+        function getBookDetails() {
+            //Recover ISBN.
+            var isbn = document.getElementById('isbnInput').value;
+
+            if (isbn.length == 10 || isbn.length == 13) {
+                //Checks if the book is already registered in the database.
+                jQuery.getJSON("/odata/Books?$filter=Isbn eq '" + isbn + "'", function (books, status) {
+                    if (books["value"].length) {
+                        //Book is already registered, display some details and provide link to all information.
+                        document.getElementById('registeredTitle').innerHTML = books["value"][0]["Title"];
+                        document.getElementById('registeredAuthor').innerHTML = books["value"][0]["Author"];
+                        document.getElementById('registeredPublicationDate').innerHTML = books["value"][0]["PublicationDate"];
+                        document.getElementById('registeredDetails').href = "/BooksMvc/Details/" + books["value"][0]["Id"];
+
+                        if (registeredBook == false) {
+                            $("#registeredBook").toggle();
+                            registeredBook = true;
+                        }
+                        if (bookData == true) {
+                            $("#bookData").toggle();
+                            bookData = false;
+                        }
+                        if (googleBook == true) {
+                            $("#googleBook").toggle();
+                            googleBook = false;
+                        }
+                    }
+                    else {
+                        //Book is not registered, query google books for book details.
+                        var url = "https://www.googleapis.com/books/v1/volumes?q=isbn:" + isbn;
+
+                        if (registeredBook == true) {
+                            $("#registeredBook").toggle();
+                            registeredBook = false;
+                        }
+
+                        jQuery.getJSON(url, function (data, status) {
+                            if (bookData == false) {
+                                $("#bookData").toggle();
+                                bookData = true;
+                            }
+
+                            if (data.totalItems) {
+                                if (googleBook == false) {
+                                    $("#googleBook").toggle();
+                                    googleBook = true;
+                                }
+                                //Book found in google books, fill details for user.
+                                var book = data.items[0];
+
+                                document.getElementById('authorInput').value = book["volumeInfo"]["authors"].join(", ");
+
+                                if (book["volumeInfo"]["subtitle"]) {
+                                    document.getElementById('titleInput').value = book["volumeInfo"]["title"] + ": " + book["volumeInfo"]["subtitle"];
+                                }
+                                else {
+                                    document.getElementById('titleInput').value = book["volumeInfo"]["title"];
+                                }
+
+                                document.getElementById('publicationDateInput').value = book["volumeInfo"]["publishedDate"];
+
+                                //Get cover image from Open Library.
+                                imgUrl = "http://covers.openlibrary.org/b/isbn/" + isbn + "-M.jpg";
+
+                                document.getElementById('imgCover').src = imgUrl;
+                                document.getElementById('imgInput').value = imgUrl;
+
+                            }
+                            else {
+                                //Book not found, reset fields and let user fill all details.
+                                if (googleBook == true) {
+                                    $("#googleBook").toggle();
+                                    googleBook = false;
+                                }
+
+                                document.getElementById('imgCover').src = "";
+                                document.getElementById('imgInput').value = "";
+                                document.getElementById('imgUploadInput').value = "";
+                                document.getElementById('titleInput').value = "";
+                                document.getElementById('authorInput').value = "";
+                                document.getElementById('publicationDateInput').value = "";
+                                document.getElementById('priceInput').value = "";
+                            }
+                        });
+                    }
+                });
+            }
+        }
+
+        function uploadImage() {
+            var preview = document.getElementById('imgCover');
+            var file = document.getElementById('imgUploadInput').files[0];
+            var reader = new FileReader();
+
+            reader.onloadend = function () {
+                preview.src = reader.result;
+            }
+
+            if (file) {
+                reader.readAsDataURL(file); //reads the data as a URL
+            } else {
+                preview.src = "";
+            }
+        }
+
+/**/</script>
+
+    <div class="col-md-8">
+        <form id="bookForm" asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Isbn" class="control-label"></label>
+                <input id="isbnInput" asp-for="Isbn" class="form-control" onchange="getBookDetails()" />
+                <h4 id="googleBook" style="display:none">Dados do livro encontrados no Google Books.</h4>
+                <span asp-validation-for="Isbn" class="text-danger"></span>
+            </div>
+            <div class="row" id="registeredBook" style="display:none">
+                <div class="col-md-12">
+                    <h4>Livro já registrado!</h4>
+                    <dl>
+                        <dt>
+                            <label asp-for="Title" class="control-label"></label>
+                        </dt>
+                        <dd>
+                            <label id="registeredTitle" style="font-weight:normal" />
+                        </dd>
+                        <dt>
+                            <label asp-for="Author" class="control-label"></label>
+                        </dt>
+                        <dd>
+                            <label id="registeredAuthor" style="font-weight:normal" />
+                        </dd>
+                        <dt>
+                            <label asp-for="PublicationDate" class="control-label"></label>
+                        </dt>
+                        <dd>
+                            <label id="registeredPublicationDate" style="font-weight:normal" />
+                        </dd>
+                        <dt>
+                            <a id="registeredDetails" style="font-weight:normal">Detalhes</a>
+                        </dt>
+                    </dl>
+                </div>
+            </div>
+            <div class="row" id="bookData" style="display:none">
+                <div class="col-md-6" style="width:30%">
+                    <div class="form-group">
+                        <label asp-for="Cover" class="control-label"></label>
+                        <div style="clear:both"></div>
+                        <img id="imgCover" style="max-width:150px" />
+                        <input id="imgInput" asp-for="Cover" class="form-control" type="hidden" />
+                        <input id="imgUploadInput" type="file" name="file" onchange="uploadImage()" />
+                    </div>
+                </div>
+                <div class="col-md-6" style="width:70%">
+                    <div class="form-group">
+                        <label asp-for="Title" class="control-label"></label>
+                        <input id="titleInput" asp-for="Title" class="form-control" />
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Author" class="control-label"></label>
+                        <input id="authorInput" asp-for="Author" class="form-control" />
+                        <span asp-validation-for="Author" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PublicationDate" class="control-label"></label>
+                        <input id="publicationDateInput" asp-for="PublicationDate" class="form-control" />
+                        <span asp-validation-for="PublicationDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Price" class="control-label"></label>
+                        <input id="priceInput" asp-for="Price" class="form-control" />
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

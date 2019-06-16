@@ -1,0 +1,83 @@
+﻿@model BookStore.Models.Book
+
+@{
+    ViewData["Title"] = "Editar Livro";
+}
+
+<h2>Editar Livro</h2>
+<hr />
+<div class="row">
+    <script type="text/javascript">
+        function uploadImage() {
+            var preview = document.getElementById('imgCover');
+            var file = document.getElementById('imgUploadInput').files[0];
+            var reader = new FileReader();
+
+            reader.onloadend = function () {
+                preview.src = reader.result;
+            }
+
+            if (file) {
+                reader.readAsDataURL(file); //reads the data as a URL
+            } else {
+                preview.src = "";
+            }
+        }
+    </script>
+
+    <div class="col-md-8">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="row">
+                <div class="col-md-6" style="width:30%">
+                    <div class="form-group">
+                        <label asp-for="Cover" class="control-label"></label>
+                        <div style="clear:both"></div>
+                        <img src="@Url.Content(Model.Cover)" id="imgCover" style="max-width:150px" />
+                        <input id="imgInput" asp-for="Cover" class="form-control" type="hidden" />
+                        <input id="imgUploadInput" type="file" name="file" onchange="uploadImage()" />
+                    </div>
+                </div>
+                <div class="col-md-6" style="width:70%">
+                    <div class="form-group">
+                        <label asp-for="Title" class="control-label"></label>
+                        <input asp-for="Title" class="form-control" />
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Isbn" class="control-label"></label>
+                        <input id="isbnInput" asp-for="Isbn" class="form-control" readonly="readonly" />
+                        <span asp-validation-for="Isbn" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Author" class="control-label"></label>
+                        <input asp-for="Author" class="form-control" />
+                        <span asp-validation-for="Author" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Price" class="control-label"></label>
+                        <input asp-for="Price" class="form-control" />
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PublicationDate" class="control-label"></label>
+                        <input asp-for="PublicationDate" class="form-control" />
+                        <span asp-validation-for="PublicationDate" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
