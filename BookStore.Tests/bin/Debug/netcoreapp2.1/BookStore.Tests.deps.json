@@ -1,16 +1,16 @@
 {
   "runtimeTarget": {
-    "name": ".NETCoreApp,Version=v2.2",
+    "name": ".NETCoreApp,Version=v2.1",
     "signature": ""
   },
   "compilationOptions": {},
   "targets": {
-    ".NETCoreApp,Version=v2.2": {
+    ".NETCoreApp,Version=v2.1": {
       "BookStore.Tests/1.0.0": {
         "dependencies": {
           "BookStore": "1.0.0",
           "Microsoft.NET.Test.Sdk": "16.1.1",
-          "MockQueryable.Core": "1.1.0",
+          "MockQueryable.Core": "1.0.4",
           "Moq": "4.11.0",
           "xunit": "2.4.1",
           "xunit.runner.visualstudio": "2.4.1"
@@ -448,11 +448,11 @@
         }
       },
       "Microsoft.Win32.Primitives/4.0.1": {},
-      "MockQueryable.Core/1.1.0": {
+      "MockQueryable.Core/1.0.4": {
         "runtime": {
           "lib/netstandard2.0/MockQueryable.dll": {
-            "assemblyVersion": "1.1.0.0",
-            "fileVersion": "1.1.0.0"
+            "assemblyVersion": "1.0.4.0",
+            "fileVersion": "1.0.4.0"
           }
         }
       },
@@ -786,12 +786,12 @@
       "path": "microsoft.win32.primitives/4.0.1",
       "hashPath": "microsoft.win32.primitives.4.0.1.nupkg.sha512"
     },
-    "MockQueryable.Core/1.1.0": {
+    "MockQueryable.Core/1.0.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-er8Gh0TgY8ySVieDpAYlUnVjIt1msCqdDX6go1kxicj7/6rFPMybCFP2p+PFuDMKM35jE3kgI6kf2x+PgixIgA==",
-      "path": "mockqueryable.core/1.1.0",
-      "hashPath": "mockqueryable.core.1.1.0.nupkg.sha512"
+      "sha512": "sha512-SRYII6AGOEzGs5GFccunOZYantlIEpzcoAGFNBDzllTxyWZp7rNt9o7VpISu2wQlD3JnN1xJCy4BYLdxgIqLPw==",
+      "path": "mockqueryable.core/1.0.4",
+      "hashPath": "mockqueryable.core.1.0.4.nupkg.sha512"
     },
     "Moq/4.11.0": {
       "type": "package",

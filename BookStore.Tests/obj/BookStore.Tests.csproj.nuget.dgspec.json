@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Caio Bulgarelli\\source\\repos\\BookStore\\BookStore.Tests\\BookStore.Tests.csproj": {}
+    "C:\\Users\\Caio Bulgarelli\\source\\repos\\caio-bulgarelli\\TceBookStore\\BookStore.Tests\\BookStore.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Caio Bulgarelli\\source\\repos\\BookStore\\BookStore.Tests\\BookStore.Tests.csproj": {
+    "C:\\Users\\Caio Bulgarelli\\source\\repos\\caio-bulgarelli\\TceBookStore\\BookStore.Tests\\BookStore.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Caio Bulgarelli\\source\\repos\\BookStore\\BookStore.Tests\\BookStore.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\Caio Bulgarelli\\source\\repos\\caio-bulgarelli\\TceBookStore\\BookStore.Tests\\BookStore.Tests.csproj",
         "projectName": "BookStore.Tests",
-        "projectPath": "C:\\Users\\Caio Bulgarelli\\source\\repos\\BookStore\\BookStore.Tests\\BookStore.Tests.csproj",
+        "projectPath": "C:\\Users\\Caio Bulgarelli\\source\\repos\\caio-bulgarelli\\TceBookStore\\BookStore.Tests\\BookStore.Tests.csproj",
         "packagesPath": "C:\\Users\\Caio Bulgarelli\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Caio Bulgarelli\\source\\repos\\BookStore\\BookStore.Tests\\obj\\",
+        "outputPath": "C:\\Users\\Caio Bulgarelli\\source\\repos\\caio-bulgarelli\\TceBookStore\\BookStore.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -23,7 +23,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp2.2"
+          "netcoreapp2.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -36,10 +36,10 @@
           "https://dotnetfeed.blob.core.windows.net/dotnet-windowsdesktop/index.json": {}
         },
         "frameworks": {
-          "netcoreapp2.2": {
+          "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Users\\Caio Bulgarelli\\source\\repos\\BookStore\\BookStore\\BookStore.csproj": {
-                "projectPath": "C:\\Users\\Caio Bulgarelli\\source\\repos\\BookStore\\BookStore\\BookStore.csproj"
+              "C:\\Users\\Caio Bulgarelli\\source\\repos\\caio-bulgarelli\\TceBookStore\\BookStore\\BookStore.csproj": {
+                "projectPath": "C:\\Users\\Caio Bulgarelli\\source\\repos\\caio-bulgarelli\\TceBookStore\\BookStore\\BookStore.csproj"
               }
             }
           }
@@ -51,19 +51,11 @@
         }
       },
       "frameworks": {
-        "netcoreapp2.2": {
+        "netcoreapp2.1": {
           "dependencies": {
             "Microsoft.AspNetCore.App": {
               "target": "Package",
-              "version": "[2.2.5, )"
-            },
-            "Microsoft.AspNetCore.Razor.Design": {
-              "target": "Package",
-              "version": "[2.2.0, )"
-            },
-            "Microsoft.Extensions.Identity.Stores": {
-              "target": "Package",
-              "version": "[2.2.0, )"
+              "version": "[2.1.11, )"
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
@@ -72,12 +64,8 @@
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[2.2.0, )",
+              "version": "[2.1.0, )",
               "autoReferenced": true
-            },
-            "MockQueryable.Core": {
-              "target": "Package",
-              "version": "[1.1.0, )"
             },
             "Moq": {
               "target": "Package",
@@ -102,14 +90,14 @@
         }
       }
     },
-    "C:\\Users\\Caio Bulgarelli\\source\\repos\\BookStore\\BookStore\\BookStore.csproj": {
+    "C:\\Users\\Caio Bulgarelli\\source\\repos\\caio-bulgarelli\\TceBookStore\\BookStore\\BookStore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Caio Bulgarelli\\source\\repos\\BookStore\\BookStore\\BookStore.csproj",
+        "projectUniqueName": "C:\\Users\\Caio Bulgarelli\\source\\repos\\caio-bulgarelli\\TceBookStore\\BookStore\\BookStore.csproj",
         "projectName": "BookStore",
-        "projectPath": "C:\\Users\\Caio Bulgarelli\\source\\repos\\BookStore\\BookStore\\BookStore.csproj",
+        "projectPath": "C:\\Users\\Caio Bulgarelli\\source\\repos\\caio-bulgarelli\\TceBookStore\\BookStore\\BookStore.csproj",
         "packagesPath": "C:\\Users\\Caio Bulgarelli\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Caio Bulgarelli\\source\\repos\\BookStore\\BookStore\\obj\\",
+        "outputPath": "C:\\Users\\Caio Bulgarelli\\source\\repos\\caio-bulgarelli\\TceBookStore\\BookStore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
