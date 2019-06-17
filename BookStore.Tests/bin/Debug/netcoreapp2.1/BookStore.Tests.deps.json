@@ -10,7 +10,7 @@
         "dependencies": {
           "BookStore": "1.0.0",
           "Microsoft.NET.Test.Sdk": "16.1.1",
-          "MockQueryable.Core": "1.0.4",
+          "MockQueryable.Moq": "1.0.4",
           "Moq": "4.11.0",
           "xunit": "2.4.1",
           "xunit.runner.visualstudio": "2.4.1"
@@ -456,6 +456,18 @@
           }
         }
       },
+      "MockQueryable.Moq/1.0.4": {
+        "dependencies": {
+          "MockQueryable.Core": "1.0.4",
+          "Moq": "4.11.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/MockQueryable.Moq.dll": {
+            "assemblyVersion": "1.0.4.0",
+            "fileVersion": "1.0.4.0"
+          }
+        }
+      },
       "Moq/4.11.0": {
         "dependencies": {
           "Castle.Core": "4.4.0"
@@ -792,6 +804,13 @@
       "sha512": "sha512-SRYII6AGOEzGs5GFccunOZYantlIEpzcoAGFNBDzllTxyWZp7rNt9o7VpISu2wQlD3JnN1xJCy4BYLdxgIqLPw==",
       "path": "mockqueryable.core/1.0.4",
       "hashPath": "mockqueryable.core.1.0.4.nupkg.sha512"
+    },
+    "MockQueryable.Moq/1.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YkDLG6vSs5qXcwO57lfDlS6lUtczAyUrTCTn7oaciahdjbso1wfUv29dElGC+z8Zzo9rmpNQ+km56SbogtvsNw==",
+      "path": "mockqueryable.moq/1.0.4",
+      "hashPath": "mockqueryable.moq.1.0.4.nupkg.sha512"
     },
     "Moq/4.11.0": {
       "type": "package",

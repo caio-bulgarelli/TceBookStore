@@ -14,9 +14,9 @@ C:\Users\Caio Bulgarelli\source\repos\caio-bulgarelli\TceBookStore\BookStore.Tes
 C:\Users\Caio Bulgarelli\source\repos\caio-bulgarelli\TceBookStore\BookStore.Tests\obj\Debug\netcoreapp2.1\BookStore.Tests.AssemblyInfoInputs.cache
 C:\Users\Caio Bulgarelli\source\repos\caio-bulgarelli\TceBookStore\BookStore.Tests\obj\Debug\netcoreapp2.1\BookStore.Tests.AssemblyInfo.cs
 C:\Users\Caio Bulgarelli\source\repos\caio-bulgarelli\TceBookStore\BookStore.Tests\obj\Debug\netcoreapp2.1\BookStore.Tests.csproj.CopyComplete
-C:\Users\Caio Bulgarelli\source\repos\caio-bulgarelli\TceBookStore\BookStore.Tests\bin\Debug\netcoreapp2.1\appsettings.Development.json
-C:\Users\Caio Bulgarelli\source\repos\caio-bulgarelli\TceBookStore\BookStore.Tests\bin\Debug\netcoreapp2.1\appsettings.json
-C:\Users\Caio Bulgarelli\source\repos\caio-bulgarelli\TceBookStore\BookStore.Tests\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
 C:\Users\Caio Bulgarelli\source\repos\caio-bulgarelli\TceBookStore\BookStore.Tests\bin\Debug\netcoreapp2.1\BookStore.Tests.pdb
 C:\Users\Caio Bulgarelli\source\repos\caio-bulgarelli\TceBookStore\BookStore.Tests\obj\Debug\netcoreapp2.1\BookStore.Tests.dll
 C:\Users\Caio Bulgarelli\source\repos\caio-bulgarelli\TceBookStore\BookStore.Tests\obj\Debug\netcoreapp2.1\BookStore.Tests.pdb
+C:\Users\Caio Bulgarelli\source\repos\caio-bulgarelli\TceBookStore\BookStore.Tests\bin\Debug\netcoreapp2.1\appsettings.Development.json
+C:\Users\Caio Bulgarelli\source\repos\caio-bulgarelli\TceBookStore\BookStore.Tests\bin\Debug\netcoreapp2.1\appsettings.json
+C:\Users\Caio Bulgarelli\source\repos\caio-bulgarelli\TceBookStore\BookStore.Tests\bin\Debug\netcoreapp2.1\Properties\launchSettings.json

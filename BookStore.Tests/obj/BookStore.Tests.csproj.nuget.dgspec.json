@@ -67,6 +67,10 @@
               "version": "[2.1.0, )",
               "autoReferenced": true
             },
+            "MockQueryable.Moq": {
+              "target": "Package",
+              "version": "[1.0.4, )"
+            },
             "Moq": {
               "target": "Package",
               "version": "[4.11.0, )"

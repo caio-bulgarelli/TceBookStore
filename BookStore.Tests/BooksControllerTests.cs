@@ -1,16 +1,15 @@
+using BookStore.Exceptions;
 using BookStore.Models;
 using BookStore.Repository;
 using Microsoft.AspNetCore.Http;
-using Moq;
 using MockQueryable.Moq;
+using Moq;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Xunit;
-
 using static BookStore.Controllers.Base.BooksBase;
-using System;
-using BookStore.Exceptions;
 
 namespace BookStore.Tests
 {
@@ -218,7 +217,7 @@ namespace BookStore.Tests
             };
 
             await Assert.ThrowsAsync<UnauthorizedException>(() => UpdateAsync(repository, 1, changeIdBook, null));
-                       
+
             Book idNotFoundBook = new Book
             {
                 Author = "David L. Nelson, Michal M. Cox",
